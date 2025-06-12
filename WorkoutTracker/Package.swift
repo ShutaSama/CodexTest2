@@ -15,6 +15,11 @@ let package = Package(
         .executableTarget(
             name: "WorkoutTracker",
             path: "Sources"
+        ),
+        .testTarget(
+            name: "WorkoutTrackerTests",
+            dependencies: ["WorkoutTracker"],
+            path: "Tests/WorkoutTrackerTests"
         )
     ]
 )
