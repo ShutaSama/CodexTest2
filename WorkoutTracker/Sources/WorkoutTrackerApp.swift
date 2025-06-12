@@ -1,3 +1,4 @@
+#if canImport(SwiftUI)
 import SwiftUI
 
 @main
@@ -8,3 +9,13 @@ struct WorkoutTrackerApp: App {
         }
     }
 }
+#else
+import Foundation
+
+@main
+struct WorkoutTrackerApp {
+    static func main() {
+        print("WorkoutTracker is only supported on platforms with SwiftUI.")
+    }
+}
+#endif

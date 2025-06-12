@@ -1,6 +1,9 @@
+#if canImport(SwiftUI)
 import SwiftUI
 import Charts
+#endif
 
+#if canImport(SwiftUI)
 struct ContentView: View {
     @State private var weight: Double = 50
     @StateObject private var store = WorkoutStore()
@@ -36,7 +39,14 @@ struct ContentView: View {
         }
     }
 }
+#else
+/// Placeholder to allow building on platforms without SwiftUI.
+struct ContentView {}
+#endif
+
+#if canImport(SwiftUI)
 
 #Preview {
     ContentView()
 }
+#endif
