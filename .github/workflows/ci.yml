@@ -1,0 +1,18 @@
+name: CI
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Test WorkoutModel
+        run: |
+          cd WorkoutModel
+          swift test
+      - name: Test WorkoutTracker
+        run: |
+          cd WorkoutTracker
+          swift test
