@@ -11,9 +11,15 @@ let package = Package(
     products: [
         .executable(name: "WorkoutTracker", targets: ["WorkoutTracker"])
     ],
+    dependencies: [
+        .package(path: "../WorkoutModel")
+    ],
     targets: [
         .executableTarget(
             name: "WorkoutTracker",
+            dependencies: [
+                "WorkoutModel"
+            ],
             path: "Sources"
         ),
         .testTarget(

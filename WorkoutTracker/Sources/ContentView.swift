@@ -1,12 +1,14 @@
 #if canImport(SwiftUI)
 import SwiftUI
 import Charts
+import WorkoutModel
 #endif
 
 #if canImport(SwiftUI)
 struct ContentView: View {
     @State private var weight: Double = 50
-    @StateObject private var store = WorkoutStore()
+    @State private var store = WorkoutModel.WorkoutStore()
+    @State private var workouts: [WorkoutModel.Workout] = []
 
     var body: some View {
         NavigationView {
@@ -19,10 +21,11 @@ struct ContentView: View {
 
                 Button("Add Workout") {
                     store.add(weight: weight)
+                    workouts = store.workouts
                 }
                 .padding()
 
-                Chart(store.workouts) { workout in
+                Chart(workouts) { workout in
                     LineMark(
                         x: .value("Date", workout.date),
                         y: .value("Weight", workout.weight)
