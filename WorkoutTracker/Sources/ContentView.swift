@@ -6,7 +6,14 @@ import Charts
 #if canImport(SwiftUI)
 struct ContentView: View {
     @State private var weight: Double = 50
-    @StateObject private var store = WorkoutStore()
+    @StateObject private var store: WorkoutStore
+
+    /// Exposes the underlying store for unit testing.
+    var storeRef: WorkoutStore { store }
+
+    init(store: WorkoutStore = WorkoutStore()) {
+        _store = StateObject(wrappedValue: store)
+    }
 
     var body: some View {
         NavigationView {
@@ -41,7 +48,13 @@ struct ContentView: View {
 }
 #else
 /// Placeholder to allow building on platforms without SwiftUI.
-struct ContentView {}
+struct ContentView {
+    var store: WorkoutStore
+
+    init(store: WorkoutStore = WorkoutStore()) {
+        self.store = store
+    }
+}
 #endif
 
 #if canImport(SwiftUI)
