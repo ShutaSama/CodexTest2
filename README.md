@@ -1,22 +1,17 @@
 # CodexTest2
 
-## WorkoutTracker iOS App
+## WorkoutTracker iOS アプリ
 
-This repository now includes a minimal sample iOS application for tracking
-workouts with a simple weight log and chart. The app uses SwiftUI and the
-`Charts` framework (available on iOS 16 and later) to plot your logged weights
-over time.
+このリポジトリには、ワークアウトを記録するための最小限のサンプル iOS アプリが含まれています。重さのログを保存し、簡単なチャートで表示することができます。アプリは SwiftUI と `Charts` フレームワーク（iOS 16 以降で利用可能）を使用し、記録した重さの推移をグラフ化します。
 
-### How it Works
+### 使い方
 
-1. Adjust the weight slider to the value you lifted.
-2. Tap **Add Workout** to record the entry.
-3. A line chart shows your weight progress.
+1. スライダーで持ち上げた重さを調整します。
+2. **Add Workout** をタップして記録を追加します。
+3. 折れ線グラフで重さの推移を確認できます。
 
-To open the project in Xcode, navigate to the `WorkoutTracker` folder and use
-"Open Package". You can then run the app on an iPhone or simulator.
+Xcode でプロジェクトを開くには `WorkoutTracker` フォルダに移動し、"Open Package" を選択してください。その後 iPhone やシミュレーターでアプリを実行できます。
 
-## WorkoutModel Library
+## WorkoutModel ライブラリ
 
-The `WorkoutModel` directory contains a small Swift package with the core
-workout data structures. Its tests can be run on Linux with `swift test`.
+`WorkoutModel` ディレクトリには、ワークアウトのデータ構造をまとめた小さな Swift パッケージが含まれています。テストは Linux 上で `swift test` を実行して確認できます。
